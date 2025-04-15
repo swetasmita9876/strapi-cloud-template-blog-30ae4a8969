@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_og_ogs",
+  "info": {
+    "displayName": "og"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "siteName": {
+      "type": "string",
+      "required": true
+    },
+    "ogLocale": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

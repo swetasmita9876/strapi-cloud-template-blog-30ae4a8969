@@ -1,0 +1,76 @@
+{
+  "collectionName": "components_seohome_seohomes",
+  "info": {
+    "displayName": "seohome",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titlle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "imageAlt": {
+      "type": "text",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "robots": {
+      "type": "string",
+      "required": true
+    },
+    "siteName": {
+      "type": "string",
+      "required": true
+    },
+    "openGraph": {
+      "displayName": "og",
+      "type": "component",
+      "repeatable": false,
+      "component": "og.og"
+    },
+    "ogTwitter": {
+      "displayName": "ogTwitter",
+      "type": "component",
+      "repeatable": false,
+      "component": "ogtwitter.og-twitter",
+      "required": true
+    },
+    "icons": {
+      "displayName": "icons",
+      "type": "component",
+      "repeatable": false,
+      "component": "icons.icons",
+      "required": true
+    },
+    "optional": {
+      "displayName": "optional",
+      "type": "component",
+      "repeatable": false,
+      "component": "optional.optional",
+      "required": true
+    },
+    "keyword": {
+      "type": "json",
+      "required": true
+    },
+    "schema": {
+      "type": "json"
+    }
+  }
+}
