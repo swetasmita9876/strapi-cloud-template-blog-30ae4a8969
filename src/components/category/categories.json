@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_category_categories",
+  "info": {
+    "displayName": "categories"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "categorySlug": {
+      "type": "string",
+      "required": true
+    },
+    "isProduct": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

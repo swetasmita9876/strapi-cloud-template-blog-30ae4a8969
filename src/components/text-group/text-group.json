@@ -6,15 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "productLink": {
-      "displayName": "productLink",
+    "section": {
+      "displayName": "section",
       "type": "component",
       "repeatable": true,
-      "component": "product-link.product-link"
+      "component": "section.section"
     }
   }
 }

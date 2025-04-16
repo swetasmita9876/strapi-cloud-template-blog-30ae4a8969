@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CategoryCategories extends Struct.ComponentSchema {
+  collectionName: 'components_category_categories';
+  info: {
+    displayName: 'categories';
+  };
+  attributes: {
+    categorySlug: Schema.Attribute.String & Schema.Attribute.Required;
+    isProduct: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ColumnsColumns extends Struct.ComponentSchema {
   collectionName: 'components_columns_columns';
   info: {
@@ -156,6 +168,18 @@ export interface ProductLinkProductLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_sections';
+  info: {
+    displayName: 'section';
+  };
+  attributes: {
+    categories: Schema.Attribute.Component<'category.categories', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsSections extends Struct.ComponentSchema {
   collectionName: 'components_sections_sections';
   info: {
@@ -249,14 +273,14 @@ export interface TextGroupTextGroup extends Struct.ComponentSchema {
     displayName: 'text-group';
   };
   attributes: {
-    productLink: Schema.Attribute.Component<'product-link.product-link', true>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    section: Schema.Attribute.Component<'section.section', true>;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'category.categories': CategoryCategories;
       'columns.columns': ColumnsColumns;
       'icons.icons': IconsIcons;
       'image-group.image-group': ImageGroupImageGroup;
@@ -270,6 +294,7 @@ declare module '@strapi/strapi' {
       'ogtwitter.ogtwitter': OgtwitterOgtwitter;
       'optional.optional': OptionalOptional;
       'product-link.product-link': ProductLinkProductLink;
+      'section.section': SectionSection;
       'sections.sections': SectionsSections;
       'seohome.seohome': SeohomeSeohome;
       'shared.media': SharedMedia;
