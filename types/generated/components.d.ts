@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ColumnsColumns extends Struct.ComponentSchema {
+  collectionName: 'components_columns_columns';
+  info: {
+    description: '';
+    displayName: 'columns';
+  };
+  attributes: {
+    imgGroup: Schema.Attribute.Component<'img-group.img-group', true>;
+    textGroup: Schema.Attribute.Component<'text-group.text-group', true>;
+  };
+}
+
 export interface IconsIcons extends Struct.ComponentSchema {
   collectionName: 'components_icons_icons';
   info: {
@@ -10,6 +22,79 @@ export interface IconsIcons extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     favIcon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     manifest: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface ImageGroupImageGroup extends Struct.ComponentSchema {
+  collectionName: 'components_image_group_image_groups';
+  info: {
+    displayName: 'image-group';
+  };
+  attributes: {};
+}
+
+export interface ImageGroupImageGrp extends Struct.ComponentSchema {
+  collectionName: 'components_image_group_image_grps';
+  info: {
+    displayName: 'image-grp';
+  };
+  attributes: {};
+}
+
+export interface ImgGroupImgGroup extends Struct.ComponentSchema {
+  collectionName: 'components_img_group_img_groups';
+  info: {
+    description: '';
+    displayName: 'img-group';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    isProduct: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    productSlug: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface LinksProductLinksProduct extends Struct.ComponentSchema {
+  collectionName: 'components_links_product_links_products';
+  info: {
+    displayName: 'linksProduct';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    isProduct: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+  };
+}
+
+export interface LinksLinks extends Struct.ComponentSchema {
+  collectionName: 'components_links_links';
+  info: {
+    displayName: 'links';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface NavitemsNavitems extends Struct.ComponentSchema {
+  collectionName: 'components_navitems_navitems';
+  info: {
+    description: '';
+    displayName: 'navitems';
+  };
+  attributes: {
+    columns: Schema.Attribute.Component<'columns.columns', true>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -54,6 +139,33 @@ export interface OptionalOptional extends Struct.ComponentSchema {
     alternateUrls: Schema.Attribute.JSON;
     modifiedTime: Schema.Attribute.Date;
     publishedTime: Schema.Attribute.Date & Schema.Attribute.Required;
+  };
+}
+
+export interface ProductLinkProductLink extends Struct.ComponentSchema {
+  collectionName: 'components_product_link_product_links';
+  info: {
+    displayName: 'productLink';
+  };
+  attributes: {
+    isProduct: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionsSections extends Struct.ComponentSchema {
+  collectionName: 'components_sections_sections';
+  info: {
+    displayName: 'sections';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'links.links', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<['text-group', 'image-group']> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -130,19 +242,41 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TextGroupTextGroup extends Struct.ComponentSchema {
+  collectionName: 'components_text_group_text_groups';
+  info: {
+    description: '';
+    displayName: 'text-group';
+  };
+  attributes: {
+    productLink: Schema.Attribute.Component<'product-link.product-link', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'columns.columns': ColumnsColumns;
       'icons.icons': IconsIcons;
+      'image-group.image-group': ImageGroupImageGroup;
+      'image-group.image-grp': ImageGroupImageGrp;
+      'img-group.img-group': ImgGroupImgGroup;
+      'links-product.links-product': LinksProductLinksProduct;
+      'links.links': LinksLinks;
+      'navitems.navitems': NavitemsNavitems;
       'og.og': OgOg;
       'ogtwitter.og-twitter': OgtwitterOgTwitter;
       'ogtwitter.ogtwitter': OgtwitterOgtwitter;
       'optional.optional': OptionalOptional;
+      'product-link.product-link': ProductLinkProductLink;
+      'sections.sections': SectionsSections;
       'seohome.seohome': SeohomeSeohome;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.slider': SharedSlider;
+      'text-group.text-group': TextGroupTextGroup;
     }
   }
 }

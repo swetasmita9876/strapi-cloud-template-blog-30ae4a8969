@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_columns_columns",
+  "info": {
+    "displayName": "columns",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "textGroup": {
+      "displayName": "text-group",
+      "type": "component",
+      "repeatable": true,
+      "component": "text-group.text-group"
+    },
+    "imgGroup": {
+      "displayName": "img-group",
+      "type": "component",
+      "repeatable": true,
+      "component": "img-group.img-group"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_navitems_navitems",
+  "info": {
+    "displayName": "navitems",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "columns": {
+      "displayName": "columns",
+      "type": "component",
+      "repeatable": true,
+      "component": "columns.columns",
+      "required": false
+    }
+  }
+}

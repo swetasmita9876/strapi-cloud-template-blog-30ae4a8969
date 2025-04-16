@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_links_product_links_products",
+  "info": {
+    "displayName": "linksProduct"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "isProduct": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

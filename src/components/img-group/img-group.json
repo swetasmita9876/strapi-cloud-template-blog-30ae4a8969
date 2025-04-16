@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_img_group_img_groups",
+  "info": {
+    "displayName": "img-group",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isProduct": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "productSlug": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

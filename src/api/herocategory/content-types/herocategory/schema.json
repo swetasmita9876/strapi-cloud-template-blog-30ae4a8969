@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "herocategories",
+  "info": {
+    "singularName": "herocategory",
+    "pluralName": "herocategories",
+    "displayName": "herocategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "navitems": {
+      "displayName": "navitems",
+      "type": "component",
+      "repeatable": true,
+      "component": "navitems.navitems",
+      "required": true
+    }
+  }
+}

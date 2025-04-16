@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_text_group_text_groups",
+  "info": {
+    "displayName": "text-group",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "productLink": {
+      "displayName": "productLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "product-link.product-link"
+    }
+  }
+}
