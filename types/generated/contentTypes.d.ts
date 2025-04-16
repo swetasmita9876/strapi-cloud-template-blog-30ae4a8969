@@ -536,7 +536,8 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
-    displayName: 'home';
+    description: '';
+    displayName: 'seo';
     pluralName: 'homes';
     singularName: 'home';
   };
