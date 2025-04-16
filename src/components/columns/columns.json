@@ -15,7 +15,7 @@
     "imgGroup": {
       "displayName": "img-group",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "img-group.img-group"
     }
   }

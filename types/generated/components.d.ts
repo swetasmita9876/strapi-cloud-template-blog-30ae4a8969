@@ -7,7 +7,7 @@ export interface ColumnsColumns extends Struct.ComponentSchema {
     displayName: 'columns';
   };
   attributes: {
-    imgGroup: Schema.Attribute.Component<'img-group.img-group', true>;
+    imgGroup: Schema.Attribute.Component<'img-group.img-group', false>;
     textGroup: Schema.Attribute.Component<'text-group.text-group', true>;
   };
 }
